@@ -10,6 +10,12 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest:80, host:3000
 
-  config.vm.provision :puppet
+  config.vm.provision :shell do |shell|
+    shell.inline = "mkdir -p /etc/puppet/modules;
+	 	    puppet module install puppetlabs/nodejs;
+		    puppet module install puppetlabs/apache;
+		    puppet module install puppetlabs/java"
+  end
 
+  config.vm.provision :puppet
 end
