@@ -10,8 +10,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest:80, host:3000
 
-  config.vm.provision "puppet" do |puppet|
-    puppet.module_path = "modules"
-  end
+  config.vm.provision :puppet
 
 end
