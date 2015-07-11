@@ -7,6 +7,22 @@ package { "apache2":
 	require => Exec["apt-get update"],
 }
 
+package { "ssh":
+	ensure => present,
+	require => Exec["apt-get update"],
+}
+
+package { "rsync":
+	ensure => present,
+	require => Exec["apt-get update"],
+}
+
+package { "vim":
+	ensure => present,
+	require => Exec["apt-get update"],
+}
+
+
 service { "apache2":
 	ensure => "running",
 	require => Package["apache2"],
