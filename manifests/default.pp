@@ -18,3 +18,5 @@ file { "/var/www/sample-webapp":
 	require => Package["apache2"],
 	notify => Service["apache2"],
 }
+
+include java
