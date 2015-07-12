@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
     shell.inline = "mkdir -p /etc/puppet/modules;
 	 	    (puppet module list | grep puppetlabs-nodejs) || (puppet module install puppetlabs/nodejs);
 		    (puppet module list | grep puppetlabs-apache) || (puppet module install puppetlabs/apache);
+		    (puppet module list | grep maestrodev-wget) || (puppet module install maestrodev/wget);
 		    (puppet module list | grep puppetlabs-java) || (puppet module install puppetlabs/java)"
   end
 
